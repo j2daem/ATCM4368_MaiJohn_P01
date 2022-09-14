@@ -8,7 +8,6 @@ public class Projectile : MonoBehaviour
     [SerializeField] int _damageAmount = 1;
 
     [Header("Projectile References")]
-    [SerializeField] GameObject _projectile = null;
     [SerializeField] ParticleSystem _projectileImpactVFX = null;
     [SerializeField] AudioClip _projectileSFX = null;
 
