@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [Header("Move Settings")]
     [SerializeField] float _moveSpeed = 100f;
     [SerializeField] float _maxSpeed = 200f;
 
+    [Header("Controller References")]
     [SerializeField] Transform _firePoint = null;
     [SerializeField] GameObject _projectilePrefab;
     [SerializeField] float _projectileForce = 100f;
@@ -20,11 +22,15 @@ public class CharacterController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        Shoot();
+    }
+
     private void FixedUpdate()
     {
         Move();
         Turn();
-        Shoot();
     }
 
     #region Movement

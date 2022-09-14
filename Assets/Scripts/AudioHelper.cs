@@ -17,6 +17,7 @@ public class AudioHelper : MonoBehaviour
         // Activate
         audioSource.Play();
         Object.Destroy(audioSource, clip.length);
+        Object.Destroy(audioObject, volume);
 
         // Return in case other things need it
         return audioSource;

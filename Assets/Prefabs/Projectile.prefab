@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4307012491170475331}
   - component: {fileID: 7481544504823567992}
   - component: {fileID: 1289820743178743367}
+  - component: {fileID: 2818755371275924538}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -127,6 +128,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2ea33f52f8e6a43a730a8f866cd190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageAmount: 1
   _projectile: {fileID: 4307012491170475330}
   _projectileImpactVFX: {fileID: 3408343462497417697, guid: 8ff49b7b24f32ef43b5134a74b3babe9, type: 3}
   _projectileSFX: {fileID: 8300000, guid: cfb90f7ee51bf514c8866116e64cc4e3, type: 3}
+--- !u!114 &2818755371275924538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307012491170475330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6892f938efd0f4895f735e580ab9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageAmount: 0
+  _knockbackAmount: 50

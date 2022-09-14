@@ -2,26 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Destructible : MonoBehaviour, IDamageable
 {
-    [Header("Projectile Settings")]
-    [SerializeField] int _damageAmount = 1;
-
-    [Header("Projectile References")]
-    [SerializeField] GameObject _projectile = null;
+    [Header("Destructible References")]
     [SerializeField] ParticleSystem _projectileImpactVFX = null;
     [SerializeField] AudioClip _projectileSFX = null;
 
-    private void OnTriggerEnter(Collider other)
+    public void TakeDamage(int amount)
     {
-        IDamageable damageable = other.GetComponent<IDamageable>();
-
-        if (damageable != null)
-        {
-            damageable.TakeDamage(_damageAmount);
-        }
-
-        #region Visual/Audio Feedback
         if (_projectileImpactVFX != null)
         {
             Instantiate(_projectileImpactVFX, transform.position, Quaternion.identity);
@@ -31,7 +19,6 @@ public class Projectile : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_projectileSFX, 1f);
         }
-        #endregion
 
         Destroy(this.gameObject);
     }
